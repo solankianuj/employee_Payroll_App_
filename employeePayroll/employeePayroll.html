@@ -8,7 +8,7 @@
   
     <title>Employee Payroll Form</title>
     <link rel="stylesheet" href="employeePayroll.css">
-    <script></script>
+    <script src="employeePayroll.js"></script>
 </head>
 <body>
     <header class="header-content " >
@@ -35,74 +35,74 @@
             <input class="input" type="text" id="name" name="name" placeholder="Your Name.." required>
         </div>
         
-        <div class="row-content">
+        <div class="row-content"  >
             <label class="label text" for="profile">Profile image :</label> 
 
             <div class="profile-radio-content">
                 <label > 
-                <input type="radio" id="profile1" name="profile" value="p1.jpg" required>
-                <img  class="profile" id="imag1" src="p1.jpg" alt="" width="45px" height="45px">
+                <input type="radio" id="profile1" name="profile" value="p1.jpg" required  oninput="profileDisplay()">
+                <img  class="profile" id="imag1" name="profile" src="p1.jpg" alt="" width="45px" height="45px">
                 </label>
             </div>
 
             <div class="profile-radio-content">
                 <label > 
-                <input type="radio" id="profile1" name="profile" value="p1.jpg" required>
-                <img  class="profile" id="imag1" src="p2.jpg" alt="" width="45px" height="45px">
+                <input type="radio" id="profile1" name="profile" value="p2.jpg" required oninput="profileDisplay()">
+                <img  class="profile" id="imag1" name="profile" src="p2.jpg" alt="" width="45px" height="45px">
                 </label>
             </div>
             <div class="profile-radio-content">
                 <label > 
-                <input type="radio" id="profile1" name="profile" value="p1.jpg" required>
-                <img  class="profile" id="imag1" src="p3.jpg" alt="" width="45px" height="45px">
+                <input type="radio" id="profile1" name="profile" value="p3.jpg" required>
+                <img  class="profile" id="imag1" name="profile" src="p3.jpg" alt="" width="45px" height="45px">
                 </label>
             </div>
             <div class="profile-radio-content">
                 <label > 
-                <input type="radio" id="profile1" name="profile" value="p1.jpg" required>
-                <img  class="profile" id="imag1" src="p4.jpg" alt="" width="45px" height="45px">
+                <input type="radio" id="profile1" name="profile" value="p4.jpg" required>
+                <img  class="profile" id="imag1" name="profile" src="p4.jpg" alt="" width="45px" height="45px">
                 </label>
             </div>
             <div class="profile-radio-content">
                 <label > 
-                <input type="radio" id="profile1" name="profile" value="p1.jpg" required>
-                <img  class="profile" id="imag1" src="p5.jpg" alt="" width="45px" height="45px">
+                <input type="radio" id="profile1" name="profile" value="p5.jpg" required>
+                <img  class="profile" id="imag1" name="profile" src="p5.jpg" alt="" width="45px" height="45px">
                 </label>
             </div>
         </div>
         <div class="row-content">
             <label class="label text" for="name">Gender :</label>
-            <div>
-                <input type="radio" id="male" name="gender" value="male">
+            <div  onclick="genderDisplay()">
+                <input type="radio" id="gender" name="gender" value="male" >
                 <label class="text" for="male">Male</label>
-                <input type="radio" id="female" name="gender" value="female">
+                <input type="radio" id="gender" name="gender" value="female" >
                 <label class="text" for="female">Female</label>
             </div>
         </div>
         <div class="row-content">
             <label class="label text" for="department">Department :</label>
-            <div>
+            <div >
 
-                <input class="checkbox" type="checkbox" id="hr" name="hr" value="HR">
+                <input class="checkbox" type="checkbox" id="department" name="department" value="HR" oninput="departmentDisplay()">
                 <label class="text" for="hr">HR</label>
-                <input class="checkbox" type="checkbox" id="sales" name="sales" value="Sales">
+                <input class="checkbox" type="checkbox" id="department" name="department" value="Sales" oninput="departmentDisplay()">
                 <label class="text" for="sales">Sales</label>
-                <input class="checkbox" type="checkbox" id="finance" name="finance" value="Finance">
+                <input class="checkbox" type="checkbox" id="department" name="department" value="Finance" oninput="departmentDisplay()">
                 <label class="text" for="finance">Finance</label>
-                <input class="checkbox" type="checkbox" id="engineer" name="engineer" value="Engineer">
+                <input class="checkbox" type="checkbox" id="department" name="department" value="Engineer" oninput="departmentDisplay()">
                 <label class="text" for="engineer">Engineer</label>
-                <input class="checkbox" type="checkbox" id="other" name="other" value="Other">
+                <input class="checkbox" type="checkbox" id="department" name="department" value="Other" oninput="departmentDisplay()">
                 <label class="text" for="other">Others</label>
             </div>
 
         </div>
         <div class="row-content">
             <label class="label text" for="salary">Choose your salary :</label>
-            <input class="input" type="range" name="salary" id="salary" min="30000" max="50000" step="100" value="40000">
+            <input class="input" type="range" name="salary" id="salary" min="30000" max="50000" step="100" value="40000" oninput="salaryInput()">
             <output class="salary-output text" for="salary">40000</output>
             
         </div>
-        <div class="row-content">
+        <div class="row-content" oninput="startDate()">
             <label class="label text" for="startDate">Start Date :</label>
             <div>
                 
@@ -179,7 +179,7 @@
                 <div class="buttonParent">
                     <a href="./home.html" class="resetButton button cancelButton">Cancel</a>
                     <div class="submit-reset">
-                        <button type="submit" class="button submitButton" id="submitButton">Submit</button>
+                        <button type="submit" class="button submitButton" id="submitButton" onclick="validation()" >Submit</button>
                         <button type="reset" class="resetButton button">Reset</button>
     
                     </div>
