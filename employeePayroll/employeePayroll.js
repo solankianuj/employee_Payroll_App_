@@ -15,7 +15,7 @@ return salary.value;
 
 function validation() {
 
-    var empName=document.querySelector('#name').value;
+    var empName=nameDisplay();
     var profile=profileDisplay();
     var gender=genderDisplay();
     var department=departmentDisplay();
@@ -34,10 +34,24 @@ function validation() {
 
     }
     
-    // alert(JSON.stringify(employeePayrollobj));
-console.log(employeePayrollobj);
+    alert(JSON.stringify(employeePayrollobj));
+// console.log(employeePayrollobj);
     
 }
+
+function nameDisplay(){
+    var Name=document.getElementById("name").value;
+    var nameReg=/^[A-Z]{1,}[a-z]{2,}[\s]{1,}/;
+    if (nameReg.test(Name)) {
+       
+        return Name;
+        
+    }
+    else
+    alert("Name is Invalid");
+
+}
+
 
 function profileDisplay(){
     var ele = document.getElementsByName('profile');
@@ -73,11 +87,34 @@ function departmentDisplay() {
 }
 
 function startDate(){
-    var day=document.getElementById("day").value;
-    var month=document.getElementById("month").value;
-    var year=document.getElementById("year").value;
-    var Date= ( day+" "+month+" "+year);
-  
-    return Date;
+    var dd=document.getElementById("day").value;
+    var mm=document.getElementById("month").value;
+    var yy=document.getElementById("year0").value;
+     var d =new Date();
+     alert(yy)
 
+     if (yy<=d.getFullYear()) {
+
+        if (yy=d.getFullYear()) {
+
+            if (mm<d.getMonth()+1) {
+                
+                    var stDate= dd+"/"+mm+"/"+yy;
+                     return stDate;
+                
+            } else {
+                alert(" Date is incorrect")
+            }
+          
+        } 
+            else{
+                var stDate= dd+"/"+mm+"/"+yy; 
+                return stDate;
+
+            }   
+     } 
+     else {
+        alert(" Date is incorrect")
+     }
+    
 }
