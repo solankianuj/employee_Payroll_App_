@@ -32,7 +32,7 @@
         </div>
         <div class="row-content">
             <label class="label text" for="name">Name :</label>
-            <input class="input" type="text" id="name" name="name" placeholder="Your Name.." required>
+            <input class="input" type="text" id="name" name="name" onsubmit="nameDisplay()" placeholder="Your Name.." required>
         </div>
         
         <div class="row-content"  >
@@ -102,7 +102,7 @@
             <output class="salary-output text" for="salary">40000</output>
             
         </div>
-        <div class="row-content" oninput="startDate()">
+        <div class="row-content" onsubmit="startDate()">
             <label class="label text" for="startDate">Start Date :</label>
             <div>
                 
@@ -144,22 +144,24 @@
                 <select id="month" name="Month" >
                     <option value="" disabled selected hidden>Month</option>
 
-                    <option value="jan">january</option>
-                    <option value="feb">Febuary</option>
-                    <option value="march">March</option>
-                    <option value="april">April</option>
-                    <option value="may">May</option>
-                    <option value="Jun">Jun</option>
-                    <option value="jul">July</option>
-                    <option value="aug">August</option>
-                    <option value="sep">September</option>
-                    <option value="oct">October</option>
-                    <option value="nov">November</option>
-                    <option value="dec">December</option>
+                    <option value="1">january</option>
+                    <option value="2">Febuary</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">Jun</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
                 </select>
-                <select name="year" id="year" >
+                <select name="year0" id="year0" >
                     <option value="" disabled selected hidden>year</option>
 
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
                     <option value="2020">2020</option>
                     <option value="2019">2019</option>
                     <option value="2018">2018</option>
